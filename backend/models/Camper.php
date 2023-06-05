@@ -52,6 +52,43 @@ class Camper extends Conectar{
 
     }
 
+    public function update_camper($id,$imagen,$nombre,$edad, $promedio, $nivelCAmpus, $nivelIngles, $especialidad, $direccion, $celular, $ingles, $Ser,$Review, $Skills, $Asitencia){
+        $conectar=parent::conexion();
+        parent::set_name();
+        $sql="UPDATE campers set imagen=? , nombre=? ,edad=?, promedio=?, nivelCAmpus=?, nivelIngles=?, especialidad=? ,direccion=? , celular=?, ingles=?, Ser=?,  Review=?, Skills=?,  Asitencia=?  WHERE id=?";
+        $sql=$conectar->prepare($sql);
+        
+        $sql->bindValue(1,$imagen);
+        $sql->bindValue(2,$nombre);
+        $sql->bindValue(3,$edad);
+        $sql->bindValue(4,$promedio);
+        $sql->bindValue(5,$nivelCAmpus);
+        $sql->bindValue(6,$nivelIngles);
+        $sql->bindValue(7,$especialidad);
+        $sql->bindValue(8,$direccion);
+        $sql->bindValue(9,$celular);
+        $sql->bindValue(10,$ingles);
+        $sql->bindValue(11,$Ser);
+        $sql->bindValue(12,$Review);
+        $sql->bindValue(13,$Skills);
+        $sql->bindValue(14,$Asitencia);
+        $sql->bindValue(15,$id);
+        $sql->execute();
+        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+    }
+    
+    public function delete_camper($id){
+        $conectar=parent::conexion();
+        parent::set_name();
+        $sql="DELETE FROM campers WHERE id=?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1,$id);
+        $sql->execute();
+        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+
+    }
 }
 
 ?>

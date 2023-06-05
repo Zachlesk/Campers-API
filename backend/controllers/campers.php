@@ -30,6 +30,20 @@ error_reporting(E_ALL);
             echo json_encode("Insertado correctamente");
             
             break;
+
+            case "update":
+
+                $datos=$camper->update_camper($body["id"], $body["imagen"],$body["nombre"],$body["edad"] ,$body["promedio"] ,$body["nivelCAmpus"], $body["nivelIngles"] , $body["especialidad"] , $body["direccion"] , $body["celular"] , $body["ingles"] , $body["Ser"] , $body["Review"] , $body["Skills"] , $body["Asitencia"]);
+                echo json_encode("camper actualizado correctamente");
+          
+            break;
+        
+            case "delete":
+        
+                $datos=$camper->delete_camper($body["id"]);
+                echo json_encode("camper eliminado correctamente");
+          
+              break;
     }
 
 ?>
