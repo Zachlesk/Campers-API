@@ -47,35 +47,37 @@ detalles()
             if(e.target.getAttribute('id')){
                 const atributos = e.target.getAttribute('id')
                 const elemento = document.getElementById(atributos)
+                const padre = elemento.parentNode
+                console.log(padre);
 
-                const imagen = elemento.getAttribute('imagen')
-                const edad = elemento.getAttribute('edad')
-                const nombre = elemento.getAttribute('nombre')
-                const promedio = elemento.getAttribute('promedio')
-                const nivelCAmpus = elemento.getAttribute('nivelCAmpus')
-                const nivelIngles = elemento.getAttribute('nivelIngles')
-                const especialidad = elemento.getAttribute('especialidad')
-                const celular = elemento.getAttribute('celular')
-                const direccion = elemento.getAttribute('direccion')
-                const ingles = elemento.getAttribute('ingles')
-                const Ser = elemento.getAttribute('ser')
-                const Review = elemento.getAttribute('Review')
-                const Skills = elemento.getAttribute('Skills')
-                const Asitencia = elemento.getAttribute('Asitencia')
+                const imagen = padre.getAttribute('imagen')
+                const edad = padre.getAttribute('edad')
+                const nombre = padre.getAttribute('nombre')
+                const promedio = padre.getAttribute('promedio')
+                const nivelCAmpus = padre.getAttribute('nivelCAmpus')
+                const nivelIngles = padre.getAttribute('nivelIngles')
+                const especialidad = padre.getAttribute('especialidad')
+                const celular = padre.getAttribute('celular')
+                const direccion = padre.getAttribute('direccion')
+                const ingles = padre.getAttribute('ingles')
+                const Ser = padre.getAttribute('ser')
+                const Review = padre.getAttribute('Review')
+                const Skills = padre.getAttribute('Skills')
+                const Asitencia = padre.getAttribute('Asitencia')
 
                 const detalles = document.querySelector('#detalles')
                 detalles.innerHTML=`
                 <div class="containerDetalles">
                 <div class="datos">
                     <div class="d-flex"><img src="images/${imagen}" alt="" class="m-2" ><button type="button" class="delete btn btn-danger" style="height: 40px;">Eliminar</button></div>
-                    <h5>${nombre}</h5>
-                    <h5>${edad}</h5>
-                    <h5>${promedio}</h5>
-                    <h5>${nivelCAmpus}</h5>
-                    <h5>${nivelIngles}</h5>
-                    <h5>${especialidad}</h5>
-                    <h5>${direccion}</h5>
-                    <h5 style="background-color: brown;">${celular}</h5>
+                    <h5>Nombre: ${nombre}</h5>
+                    <h5>Edad: ${edad}</h5>
+                    <h5>Promedio: ${promedio}</h5>
+                    <h5>Nivel: ${nivelCAmpus}</h5>
+                    <h5>Ingles: ${nivelIngles}</h5>
+                    <h5>Especialidad: ${especialidad}</h5>
+                    <h5>Direccion: ${direccion}</h5>
+                    <h5 style="background-color: brown;"> Celular: ${celular}</h5>
                 </div>
                 </div>
 

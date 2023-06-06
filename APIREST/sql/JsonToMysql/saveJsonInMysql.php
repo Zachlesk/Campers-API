@@ -480,8 +480,8 @@ $datoscampers = json_decode($campers, true);
 
 
 $server = "localhost";
-$user = "root";
-$pass = "";
+$user = "campus";
+$pass = "campus2023";
 $bd = "estadisticas";
 
 //Creamos la conexión
